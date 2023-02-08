@@ -1,16 +1,14 @@
 # GitHub Activity in Readme
 
-Updates `README.md` with the recent GitHub activity of a user.
+The purpose of this action is to update the `README.md` file with the recent GitHub activity of a user.
 
-<img width="735" alt="profile-repo" src="https://user-images.githubusercontent.com/25279263/87703301-3aa4a500-c7b8-11ea-8eb6-245121997a7b.png">
-
----
+//TODO: Add a screenshot
 
 ## Instructions
 
-- Add the comment `<!--START_SECTION:activity-->` (entry point) within `README.md`. You can find an example [here](https://github.com/jamesgeorge007/jamesgeorge007/blob/master/README.md).
+1. Add the comment `<!--START_SECTION:activity-->` (entry point) within `README.md`. You can find an example [here]()
 
-- It's the time to create a workflow file.
+2. Now you have to create a workflow file.
 
 `.github/workflows/update-readme.yml`
 
@@ -29,20 +27,24 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: jamesgeorge007/github-activity-readme@master
+      - uses: manueldevjour/github-activity-readme@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
+3. Create a GitHub token. You have to create a [personal access token](https://github.com/settings/tokens?type=beta). You can find more information [here](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line). I gave permissions on everything until I test it more. You can give less permissions if you want.
+
+<img width="735" alt="profile-repo" src="">
+//TODO: fix this screenshot.
+
+4. Go to your repository > Settings > Secrets and variables > Actions > New repository secret  Secret part of repository for using it and call it as `GH_TOKEN` and paste your token in the value part.
+
+<img width="735" alt="profile-repo" src="">
+//TODO: fix this screenshot.
+
+
 The above job runs every half an hour, you can change it as you wish based on the [cron syntax](https://jasonet.co/posts/scheduled-actions/#the-cron-syntax).
 
-Please note that only those public events that belong to the following list show up:-
-
-- `IssueEvent`
-- `IssueCommentEvent`
-- `PullRequestEvent`
-
-You can find an example [here](https://github.com/jamesgeorge007/jamesgeorge007/blob/master/.github/workflows/update-readme.yml).
 
 ### Override defaults
 
@@ -77,4 +79,7 @@ jobs:
           MAX_LINES: 10
 ```
 
-_Inspired by [JasonEtco/activity-box](https://github.com/JasonEtco/activity-box)_
+---------------------------------------
+
+_Inspired by [JasonEtco/activity-box](https://github.com/JasonEtco/activity-box) and [jamesgeorge007/github-activity-readme](https://github.com/jamesgeorge007/github-activity-readme)_
+

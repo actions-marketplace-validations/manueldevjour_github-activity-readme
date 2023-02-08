@@ -82,19 +82,19 @@ const commitFile = async () => {
 
 const serializers = {
   IssueCommentEvent: (item) => {
-    return `🗣 Commented on ${toUrlFormat(item)} in ${toUrlFormat(
+    return `💬 Commented on ${toUrlFormat(item)} in ${toUrlFormat(
       item.repo.name
     )}`;
   },
   IssuesEvent: (item) => {
-    return `❗️ ${capitalize(item.payload.action)} issue ${toUrlFormat(
+    return `⚠️ ${capitalize(item.payload.action)} issue ${toUrlFormat(
       item
     )} in ${toUrlFormat(item.repo.name)}`;
   },
   PullRequestEvent: (item) => {
-    const emoji = item.payload.action === "opened" ? "💪" : "❌";
+    const emoji = item.payload.action === "opened" ? "✅" : "❌";
     const line = item.payload.pull_request.merged
-      ? "🎉 Merged"
+      ? "🎉 Merged!"
       : `${emoji} ${capitalize(item.payload.action)}`;
     return `${line} PR ${toUrlFormat(item)} in ${toUrlFormat(item.repo.name)}`;
   },

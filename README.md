@@ -2,7 +2,7 @@
 
 The purpose of this action is to update the `README.md` file with the recent GitHub activity of a user.
 
-//TODO: Add a screenshot
+<img width="735" alt="profile-repo" src="https://github.com/manueldevjour/github-activity-readme/blob/master/assets/general.jpeg">
 
 ## Instructions
 

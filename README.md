@@ -2,7 +2,7 @@
 
 The purpose of this action is to update the `README.md` file with the recent GitHub activity of a user.
 
-//TODO: Add a screenshot
+<img width="735" alt="profile-repo" src="https://github.com/manueldevjour/github-activity-readme/blob/master/assets/general.jpeg">
 
 ## Instructions
 
@@ -34,13 +34,11 @@ jobs:
 
 3. Create a GitHub token. You have to create a [personal access token](https://github.com/settings/tokens?type=beta). You can find more information [here](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line). I gave permissions on everything until I test it more. You can give less permissions if you want.
 
-<img width="735" alt="profile-repo" src="">
-//TODO: fix this screenshot.
+<img width="735" alt="profile-repo" src="https://github.com/manueldevjour/github-activity-readme/blob/master/assets/create-token.jpeg">
 
 4. Go to your repository > Settings > Secrets and variables > Actions > New repository secret  Secret part of repository for using it and call it as `GH_TOKEN` and paste your token in the value part.
 
-<img width="735" alt="profile-repo" src="">
-//TODO: fix this screenshot.
+<img width="735" alt="profile-repo" src="https://github.com/manueldevjour/github-activity-readme/blob/master/assets/token-secret.jpeg">
 
 
 The above job runs every half an hour, you can change it as you wish based on the [cron syntax](https://jasonet.co/posts/scheduled-actions/#the-cron-syntax).
